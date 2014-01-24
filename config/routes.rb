@@ -2,18 +2,14 @@ Ritly::Application.routes.draw do
   
   root 'ritly#index'
 
-  #localhost:3000/go/random_generated_code/preview 
-
   
-
-  # generate new link
-  get '/go/:random_string', to: 'links#new'#, as: :new_links
+  # generate new link and show preview
+  get '/go/:random_string/preview', to: 'links#preview'#, as: :preview
 
   post '/go', to: 'links#create'
 
   #localhost:3000/go/random_generated_code/
 
-  get 'animals/:id', to: 'animals#show', as: :animal
-
+  get '/go/:random_string', to: 'links#go'#, as: :go
 
 end

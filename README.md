@@ -1,5 +1,21 @@
 Controller
 links
+	def index
+		@link = Link.new
+	end
+	def create
+		new_link = params.require(:link).permit(:link)
+		#SecureRandom.urlsafe_base64(length_of_string) and stuff into :random_string
+		#set visits = 0
+		animal = Animal.create(new_animal)
+		redirect_to animal_path(animal.id) #could refactor to simply ===> redirect_to animal
+	end
+	def preview
+
+	end
+	def go
+		
+	end
 
 Model
 link
