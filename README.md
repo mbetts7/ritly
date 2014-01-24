@@ -14,7 +14,7 @@ links
 
 	end
 	def go
-		
+
 	end
 
 Model
@@ -22,33 +22,30 @@ link
 	- link
 	- random string
 	- visits
+rails g model link link random_string visits
 
 Views
 index.html.css -- links
 	- form for typing in url they want shortened
 	- 
 go
+- 
+preview
 
 
 
-
-
-
-Description of App
 
 STORY 1: Visitors to Ritly will be able to request a randomly generated code for their URL link and save it to the database.
 
 STORY 2: Visitors to Ritly can go to localhost:3000/go/random_generated_code and the application will redirect them to the matched link in the database.
 
 STORY 3: Visitors to Ritly can go to localhost:3000/go/random_generated_code/preview and preview the URL to which they would be redirected.
+	- Make the preview page contain a preview of the content at the url, not just the target url.
 
-Instructions
+Features:
+- Make the preview or url show page contain the number of times someone has used that redirect.
+- prepopulate https://
 
-Here are a few hints.
-
-The URLs Table
-
-id	link	random_string	created at	updated at
 
 The Routes
 Think about the different pages and actions that exist on Ritly.
@@ -71,10 +68,10 @@ Use SecureRandom.urlsafe_base64(length_of_string) to help you generate a random 
 
 Bonus:
 
-Make the preview or url show page contain the number of times someone has used that redirect.
+
 
 Allow the user creating the redirect to give a string to use as the shortened string. (localhost:3000/go/my_string redirects to my_url). Make sure to think about possible problems this could cause.
 
-Make the preview page contain a preview of the content at the url, not just the target url.
+
 
 Make everything gorgeous.
