@@ -3,11 +3,17 @@ links
 
 Model
 link
+	- link
+	- random string
+	- visits
 
 Views
 index.html.css -- links
 	- form for typing in url they want shortened
 	- 
+go
+
+
 
 
 
@@ -21,8 +27,6 @@ STORY 2: Visitors to Ritly can go to localhost:3000/go/random_generated_code and
 STORY 3: Visitors to Ritly can go to localhost:3000/go/random_generated_code/preview and preview the URL to which they would be redirected.
 
 Instructions
-
-We are going to stimulate your understanding of Rails through experience. With the description and demo above build Ritly. Use the hints below to help you build.
 
 Here are a few hints.
 
