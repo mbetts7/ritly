@@ -1,7 +1,6 @@
 Controller
 links
 	def index
-		@link = Link.new
 	end
 	def create
 		new_link = params.require(:link).permit(:link)
