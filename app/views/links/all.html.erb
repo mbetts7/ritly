@@ -1,6 +1,6 @@
 <% @links.each do |all| %>
-        <%= all.link %><br>
+        <%= all.full_link %><br>
         <%= all.random_string %><br>
         <%= all.visits %><br>
-        <%= button_to "Delete Ritly" %><br>
+        <%= button_to "Delete Ritly", "/go/#{all.id}", method: :delete %><br>
 <% end %>

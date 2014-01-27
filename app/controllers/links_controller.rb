@@ -3,10 +3,14 @@ class LinksController < ApplicationController
 	def index
 	end
 
+	def all
+		@links = Link.all
+	end
+
 	def create
 		generate_string = SecureRandom.urlsafe_base64(10)
 		l = Link.new
-		l.link = params[:link][:link]
+		l.full_link = params[:link][:full_link]
 		l.random_string = generate_string
 		l.visits = 0
 		l.save
@@ -15,42 +19,15 @@ class LinksController < ApplicationController
 	end
 
 	def preview
-		gen_string = params[:random_string]
-        @l = Link.where(random_string: gen_string).first
-
-        render :preview
-		# Go to <%= link_to "localhost:3000/go/#{@l.random_string}", "/go/#{@l.random_string}", method: :patch %> to visit your URL
+		gen_string = params[:placeholdervariableidontcare]
+        @l = Link.where(random_string: gen_string).take
 	end
 
 
 	def redirect
-		# redirect_to_url(Link.link.last)
-		# @link = Link.find(params[:id]).link
-		gen_string = params[:random_string]
-        row = Link.where(random_string: gen_string).first
-        redirect_to "#{row.link}"
-		# binding.pry
-		
-		# binding.pry
-		# row = Link.where(random_string: generate_string).first
-		# binding.pry
-		# # row.visits += 1
-		# # row.save
-		# binding.pry
-		# redirect_to "#{row.link}"
-		# binding.pry
-
-   # ritl = params[:ritlyurl]
-   #              link = Link.where(ritly_url: ritl).first
-                
-   #              link.save
-
-   #              redirect_to "#{link.full_url}"
-
-
-   
-
-
+		gen_string = params[:placeholdervariableidontcare]
+        row = Link.where(random_string: gen_string).take
+        redirect_to "#{row.full_link}"
 	end
 
 	def edit
@@ -61,13 +38,12 @@ class LinksController < ApplicationController
 		# validates_presence_of :status ...equal to true or fales
 	end
 
-	def destroy
-		# t = Link.find(#)
-		# t.destroy
+	def delete
+		link_to_delete = params[:id]
+        Link.destroy(link_to_delete)
+		redirect_to all_path
 	end
 
-	def all
-		@links = Link.all
-	end
+	
 
 end
