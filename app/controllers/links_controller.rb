@@ -27,10 +27,11 @@ class LinksController < ApplicationController
 	def redirect
 		gen_string = params[:placeholdervariableidontcare]
         row = Link.where(random_string: gen_string).take
-        row.visits += 1
+       	row.increment(:visits, by = 1)
         row.save
-        
+
         redirect_to "#{row.full_link}"
+
 	end
 
 	def edit
