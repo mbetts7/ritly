@@ -7,8 +7,12 @@ Ritly::Application.routes.draw do
 
   post '/go', to: 'links#create'
 
-  #localhost:3000/go/random_generated_code/
+  patch '/go/:placeholdervariableidontcare', to: 'links#redirect', as: :redirect
 
-  get '/go/:placeholdervariableidontcare', to: 'links#go', as: :redirect
+  get '/go/:placeholdervariableidontcare', to: 'links#redirect'
+
+  get '/all', to: 'links#all'
+
+  
 
 end

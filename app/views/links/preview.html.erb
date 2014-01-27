@@ -1,6 +1,16 @@
 <h1>Your URL is:</h1> 
 
-http://localhost:3000/go/<%= Link.last.random_string %>
+<div>
+	<%= Link.last.random_string %>
+</div>
+
+<div>
+<%= link_to "link is here", redirect_path %>
+</div>
+
+<div>
+<%= @l %>
+</div>
 
 <br>
 <br>
