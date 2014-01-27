@@ -23,7 +23,6 @@ class LinksController < ApplicationController
         @link = Link.where(random_string: gen_string).take
 	end
 
-
 	def redirect
 		gen_string = params[:placeholdervariableidontcare]
         row = Link.where(random_string: gen_string).take
