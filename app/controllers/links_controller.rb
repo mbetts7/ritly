@@ -20,13 +20,16 @@ class LinksController < ApplicationController
 
 	def preview
 		gen_string = params[:placeholdervariableidontcare]
-        @l = Link.where(random_string: gen_string).take
+        @link = Link.where(random_string: gen_string).take
 	end
 
 
 	def redirect
 		gen_string = params[:placeholdervariableidontcare]
         row = Link.where(random_string: gen_string).take
+        row.visits += 1
+        row.save
+        
         redirect_to "#{row.full_link}"
 	end
 
