@@ -40,14 +40,14 @@ class LinksController < ApplicationController
 	end
 
 	def edit
-		gen_string = params[:id]
+		gen_string = params[:placeholdervariableidontcare]
 		@link = Link.where(random_string: gen_string).take
 
 	end
 
 	def update
-		gen_string = Link.find(params[:id])
-		gen_string.update_attributes(params.require(:link).permit(:random_string))
+		gen_string = Link.find(params[:placeholdervariableidontcare])
+		# gen_string.update_attributes(params.([:link][:random_string])
 
 		redirect_to all_path
 

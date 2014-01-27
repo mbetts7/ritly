@@ -6,11 +6,11 @@ Ritly::Application.routes.draw do
 
   post '/go', to: 'links#create'
 
-  patch '/go/:placeholdervariableidontcare', to: 'links#redirect', as: :redirect
+  patch '/go/:placeholdervariableidontcare/redirect', to: 'links#redirect', as: :redirect
   
   delete '/go/:id', to: 'links#delete'
 
-  get '/go/:id/edit', to: 'links#edit'
-  patch '/go', to: 'links#update'  
+  get '/go/:placeholdervariableidontcare/edit', to: 'links#edit'
+  patch '/go/:placeholdervariableidontcare', to: 'links#update'  
 
 end
