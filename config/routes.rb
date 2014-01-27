@@ -11,6 +11,6 @@ Ritly::Application.routes.draw do
   delete '/go/:id', to: 'links#delete'
 
   get '/go/:id/edit', to: 'links#edit'
-  patch 'go/:id', to: 'links#update'
+  patch '/go', to: 'links#update'  
 
 end

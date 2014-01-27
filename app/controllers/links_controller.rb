@@ -40,6 +40,17 @@ class LinksController < ApplicationController
 	end
 
 	def edit
+		gen_string = params[:id]
+		@link = Link.where(random_string: gen_string).take
+
+	end
+
+	def update
+		gen_string = Link.find(params[:id])
+		gen_string.update_attributes(params.require(:link).permit(:random_string))
+
+		redirect_to all_path
+
 		# t = Link.find(#)
 		# t.random_string = new random_string
 		# t.save
