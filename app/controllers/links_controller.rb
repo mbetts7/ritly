@@ -17,7 +17,7 @@ class LinksController < ApplicationController
 		end
 		
 		l = Link.new
-		l.full_link = ["http://",domain].join
+		l.full_link = ["https://",domain].join
 		l.random_string = SecureRandom.urlsafe_base64(6)
 		l.visits = 0
 		l.save

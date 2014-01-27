@@ -1,26 +1,14 @@
 Features to add:
-- edit link
-- do iphrame
-- use partials
+- fix edit links and iframe
+- don't duplicate urls
+- Make the preview or url show page contain the number of times someone has used that redirect.
 
 
 QUESTIONS:
 - does preview variable have to be same as redirect variable since it is linking to that?
 - http or https?
-
-
-
-STORY 1: Visitors to Ritly will be able to request a randomly generated code for their URL link and save it to the database.
-
-STORY 2: Visitors to Ritly can go to localhost:3000/go/random_generated_code and the application will redirect them to the matched link in the database.
-
-STORY 3: Visitors to Ritly can go to localhost:3000/go/random_generated_code/preview and preview the URL to which they would be redirected.
-	- Make the preview page contain a preview of the content at the url, not just the target url.
-
-Features:
-- Make the preview or url show page contain the number of times someone has used that redirect.
-- prepopulate https://
-
+- why does iframe not work
+- why does edit page not work
 
 The Routes
 Think about the different pages and actions that exist on Ritly.
