@@ -8,14 +8,21 @@ class LinksController < ApplicationController
 	end
 
 	def create
-		generate_string = SecureRandom.urlsafe_base64(10)
+		long_link = params[:link][:full_link]
+		if long_link.split("//").first == "http:"
+			link_array = long_link.split("//")
+			domain = link_array.shift
+		else
+			domain = long_link
+		end
+		
 		l = Link.new
-		l.full_link = params[:link][:full_link]
-		l.random_string = generate_string
+		l.full_link = ["http://",domain].join
+		l.random_string = SecureRandom.urlsafe_base64(6)
 		l.visits = 0
 		l.save
 
-		redirect_to preview_path(generate_string)
+		redirect_to preview_path(l.random_string)
 	end
 
 	def preview
@@ -30,7 +37,6 @@ class LinksController < ApplicationController
         row.save
 
         redirect_to "#{row.full_link}"
-
 	end
 
 	def edit

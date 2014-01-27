@@ -1,13 +1,8 @@
-<h1>Your URL is:</h1> 
+<h1>Your shortened URL is:</h1> 
+
+
+<h1>It will take you to here:</h1> 
 
 <div>
-	<%= Link.last.random_string %>
-</div>
-
-<div>
-<%= link_to "link is here", redirect_path, method: :patch %>
-</div>
-
-<div>
-<%= @link.full_link %>
+<%= link_to @link.full_link, redirect_path, method: :patch %>
 </div>

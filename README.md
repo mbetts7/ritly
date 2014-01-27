@@ -1,36 +1,12 @@
-Controller
-links
-	def index
-	end
-	def create
-		new_link = params.require(:link).permit(:link)
-		#SecureRandom.urlsafe_base64(length_of_string) and stuff into :random_string
-		#set visits = 0
-		animal = Animal.create(new_animal)
-		redirect_to animal_path(animal.id) #could refactor to simply ===> redirect_to animal
-	end
-	def preview
+Features to add:
+- edit link
+- do iphrame
+- use partials
 
-	end
-	def go
 
-	end
-
-Model
-link
-	- link
-	- random string
-	- visits
-rails g model link link random_string visits
-
-Views
-index.html.css -- links
-	- form for typing in url they want shortened
-	- 
-go
-- 
-preview
-
+QUESTIONS:
+- does preview variable have to be same as redirect variable since it is linking to that?
+- http or https?
 
 
 
